@@ -26,8 +26,12 @@ gardenApp.config( ($routeProvider) => {
 			templateUrl: 'partials/build-garden.html',
 			controller: 'BuildController'
 		})
-		.when('/', {
+		.when('/plant-garden', {
 			templateUrl: 'partials/plant-garden.html',
+			controller: 'gardenCtrl'
+		})
+		.when('/my-garden', {
+			templateUrl: 'partials/view-saved.html',
 			controller: 'gardenCtrl'
 		})
 		.otherwise('/');
