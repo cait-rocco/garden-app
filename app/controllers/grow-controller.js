@@ -1,11 +1,17 @@
 "use strict";
 
-gardenApp.controller('gardenCtrl', function($scope) {
+gardenApp.controller('gardenCtrl', function($window, $q, $http, FirebaseUrl, $scope, UserFactory) {
   // This controller and the related HTML in index.html
   // are based on this mess: http://jsfiddle.net/YXxsH/5/
   let position;
   let counter = 0;
   let garden = {};
+  let currentUser = null;
+
+  UserFactory.isAuthenticated()
+  .then( (user) => {
+    currentUser = UserFactory.getUser();
+  });
 
   $scope.allowDrop = (ev) => {
       ev.preventDefault();
@@ -38,6 +44,7 @@ gardenApp.controller('gardenCtrl', function($scope) {
         ev.pageY - adjustedY
       );
       garden[`plant${counter}`] = {xCoord: ev.pageX - adjustedX, yCoord: ev.pageY - adjustedY, imgName: $img.attr("id")};
+      garden.uid = currentUser;
   };
 
   function printGarden(garden) {
@@ -54,4 +61,38 @@ gardenApp.controller('gardenCtrl', function($scope) {
       .getContext("2d").drawImage($img[0], gardenObjects[plant].xCoord, gardenObjects[plant].yCoord);
     }
   }
+
+  $scope.saveGarden = () => {
+    console.log("user", currentUser);
+    return $q((resolve, reject) => {
+      $http.post(`${FirebaseUrl}gardens.json`,
+        angular.toJson(garden))
+      .then( (newGardenData) => {
+        console.log("new garden saved", newGardenData.name );
+        resolve(newGardenData);
+      })
+      .catch( (err) => {
+        console.log("err", err);
+      });
+    });
+  };
+
+  // $scope.saveBoardItem = () => {
+  //   $scope.newBoardItem.uid = UserFactory.getUser();
+  //   BoardFactory.postNewBoard($scope.newBoardItem)
+  //   .then( (data) => {
+  //     fetchBoards();
+  //   });
+  // };
+
+  $scope.getGarden = (userId) => {
+    return $q((resolve, reject) => {
+      $http.get(`${FirebaseUrl}gardens.json?orderBy="uid"&equalTo="${userId}"`)
+      .then( (garden) => {
+        // $window.location.href = `/#!/my-garden`;
+        console.log("garden", garden.data);
+        printGarden(garden.data);
+      });
+    });
+  };
 });
