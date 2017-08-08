@@ -6,7 +6,7 @@ gardenApp.controller('UserController', function($scope, $window, UserFactory){
 		console.log("login clicked");
 		UserFactory.loginUser()
 		.then( (userData) => {
-		  $window.location.href = '#!/build-garden';
+		  $window.location.href = '#!/gardens';
 		});
 	};
 

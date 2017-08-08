@@ -1,0 +1,14 @@
+<div>
+	<h1>Build Garden</h1>
+
+	<label>Enter the name of your garden: </label>
+	<input type="text" ng-model="newGarden.name">
+
+	<label>Enter the longest point of your garden: </label>
+	<input type="text" id="gardenLength" ng-model="newGarden.length">
+
+	<label>Enter the widest point of your garden: </label>
+	<input type="text" name="gardenHeight" ng-model="newGarden.width">
+
+	<button id="buildBtn" ng-click="saveGarden()">Submit</button>
+</div>
