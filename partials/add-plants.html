@@ -1,0 +1,23 @@
+<div >
+    <!-- Any elements before the canvas are making it drop in weird places. Why? -->
+    <h3>Here is where you can make a new garden</h3>
+
+    <div class="divWrapper">
+        <img id="tomato" src="tomato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+        <img id="cucumber" src="cucumber.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+        <!-- <img id="onion" src="onion.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/> -->
+   <!--  </div>
+
+    <div> -->
+        <canvas class="divWrapper" id="graphCanvas" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width=300 height=300 style="border:1px solid #000000;"></canvas>
+    </div><br>
+
+    <button ng-click="viewSavedGarden()">Save Garden</button>
+    <button ng-click="clearPlants()">Start Over</button>
+
+    <!-- <h3>Here is where you can print your saved garden</h3>
+    <canvas id="graphCanvas2" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" height=300 width=300 style="border:1px solid #000000;">
+    </canvas>
+    <button ng-click="getGarden($routeParams.gardenId)">Get My Saved Garden</button> -->
+
+  </div>

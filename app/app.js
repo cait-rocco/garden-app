@@ -19,20 +19,24 @@ let isAuth = (UserFactory) => {
 gardenApp.config( ($routeProvider) => {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'partials/login.html',
+			templateUrl: 'partials/home.html',
 			controller: 'UserController'
 		})
-		.when('/build-garden', {
-			templateUrl: 'partials/build-garden.html',
-			controller: 'BuildController'
+		.when('/gardens', {
+			templateUrl: 'partials/garden-list.html',
+			controller: 'GardenListController'
 		})
-		.when('/plant-garden', {
-			templateUrl: 'partials/plant-garden.html',
-			controller: 'gardenCtrl'
+		.when('/new-garden', {
+			templateUrl: 'partials/new-garden.html',
+			controller: 'NewGardenController'
 		})
-		.when('/my-garden', {
-			templateUrl: 'partials/view-saved.html',
-			controller: 'gardenCtrl'
+		.when('/add-plants/:gardenId', {
+			templateUrl: 'partials/add-plants.html',
+			controller: 'AddPlantsController'
+		})
+		.when('/gardens/detail/:gardenId', {
+			templateUrl: 'partials/view-garden.html',
+			controller: 'ViewGardenController'
 		})
 		.otherwise('/');
 });
