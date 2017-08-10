@@ -2,8 +2,6 @@
 
 gardenApp.controller("NavController", function($scope, $window, FilterFactory, UserFactory) {
 
-
-  $scope.searchText = FilterFactory;
   $scope.isLoggedIn = false;
 
   // Listen for changes to auth state; If logged in, change isLoggedIn to true so

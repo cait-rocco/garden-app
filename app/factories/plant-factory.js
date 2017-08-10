@@ -2,24 +2,11 @@
 
 gardenApp.factory('PlantFactory', function($q, $http, FirebaseUrl) {
 
-// let getPlants = (gardenId) => {
-//     return $q( (resolve, reject) => {
-//       $http.get(`${FirebaseUrl}gardens/${gardenId}.json`)
-//       .then( (garden) => {
-//         resolve(garden.data);
-//       })
-//       .catch( (err) => {
-//         reject(err);
-//       });
-//     });
-//   };
-
   let getPlants = (gardenId) => {
     return $q( (resolve, reject) => {
       $http.get(`${FirebaseUrl}plants.json?orderBy="gardenId"&equalTo="${gardenId}"`)
       .then( (plantData) => {
         resolve(plantData);
-        console.log("plants factory?", plantData);
       })
       .catch( (err) => {
         console.log("oops", err);
@@ -39,10 +26,25 @@ gardenApp.factory('PlantFactory', function($q, $http, FirebaseUrl) {
       Promise.all(promiseArr)
       .then((plantData) => {
         resolve(plantData);
-        // $window.location.href = `/#!/gardens/detail/${newGardenData.data.name}'`;
       });
     });
    };
 
-  return {getPlants, saveNewPlants};
+  let deletePlants = (plantId)=>{
+    return $q ((resolve, reject)=>{
+        if(plantId){
+            $http.delete(`${FirebaseUrl}plants/${plantId}.json`)
+            .then((data)=>{
+                resolve(data);
+            })
+            .catch((err)=>{
+                reject(err);
+            });
+        }else{
+            console.log ("didn't get the id for deletion");
+        }
+    });
+ };
+
+  return {getPlants, saveNewPlants, deletePlants};
 });

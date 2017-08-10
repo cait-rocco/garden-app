@@ -28,6 +28,19 @@ let getGardenList = (userId) => {
       });
   };
 
+  let getVegetables = () => {
+      return $q( (resolve, reject) => {
+      $http.get(`${FirebaseUrl}vegetables.json`)
+      .then( (veggieData) => {
+        resolve(veggieData);
+      })
+      .catch( (err) => {
+        console.log("oops", err);
+        reject(err);
+      });
+    });
+  } ;
+
   let deleteGarden = (gardenId) => {
     return $q( (resolve, reject) => {
       if (gardenId) {
@@ -46,10 +59,9 @@ let getGardenList = (userId) => {
 
    let getSingleGarden = (gardenId) => {
     return $q( (resolve, reject) => {
-      $http.get(`${FirebaseUrl}gardens/${gardenId}.json`)
+      $http.get(`${FirebaseUrl}gardens.json?orderBy="gardenId"&equalTo="${gardenId}"`)
       .then( (garden) => {
         resolve(garden.data);
-        // printGarden(garden.data);
       })
       .catch( (err) => {
         reject(err);
@@ -57,5 +69,5 @@ let getGardenList = (userId) => {
     });
   };
 
-   return { getGardenList, saveNewGarden, deleteGarden, getSingleGarden };
+   return { getGardenList, saveNewGarden, deleteGarden, getSingleGarden, getVegetables };
 });
