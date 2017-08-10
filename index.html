@@ -11,25 +11,38 @@
 
     <body ng-app="GardenApp">
 
-		<nav>
-		    <ul>
+		<nav ng-controller="UserController">
+		    
+			<ul class="navbar-nav mr-auto">
+    			<li class="nav-item" ng-show="!isLoggedIn">
+       				<a class="nav-link" ng-click="login()" ng-href="#!/">Login</a>
+      			</li>
+      			<li class="nav-item" ng-show="isLoggedIn">
+        			<a class="nav-link" ng-href="#!/logout" ng-click="logout()">Logout</a>
+      			</li>
+      			<li class="nav-item" ng-show="isLoggedIn">
+        			<a class='nav-link' ng-href="#!/new-garden">Create a New Garden</a>
+      			</li>
+    		</ul>
+
+		    <!-- ul>
 
 				<section class="user-login" ng-show="!isLoggedIn" >
 				  <h1>Login</h1>
 				  <div ng-click="isLoggedIn = !isLoggedIn">
 				    <button ng-controller="UserController" class="btn btn-info" ng-click="login()">Log in</button>
-				    <!-- <button class="btn btn-info" ng-click="logout()">Log out</button> -->
-				  </div>
-				</section>
+				    <button class="btn btn-info" ng-click="logout()">Log out</button>
+				  </div> -->
+				<!-- </section>
 
-		      <!-- <li class="nav-item" ng-show="!isLoggedIn" ng-click="isLoggedIn = !isLoggedIn">
+		      <li class="nav-item" ng-show="!isLoggedIn" ng-click="isLoggedIn = !isLoggedIn">
 		        <a class="nav-link" ng-href="#!/">Login</a>
-		      </li> -->
+		      </li>
 		      <li class="nav-item" ng-show="isLoggedIn" ng-click="isLoggedIn = !isLoggedIn">
 		        <a class="nav-link" ng-href="#!/logout" ng-click="logout()">Logout</a>
 		        <a class='nav-link' ng-href="#!/new-garden">Create a New Garden</a>
 		      </li>
-		    </ul>
+		    </ul>  -->
 		</nav>
 
 		<div ng-view></div>
