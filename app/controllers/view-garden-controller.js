@@ -1,19 +1,18 @@
 'use strict';
 
-gardenApp.controller('ViewGardenController', function($scope, $routeParams, UserFactory, PlantFactory, GardenFactory) {
-
-  console.log("this is the view garden controller");
+gardenApp.controller('ViewGardenController', function($scope, $routeParams, $route, UserFactory, TodoFactory, PlantFactory, GardenFactory) {
 
   let currentUser = UserFactory.getUser();
  
   UserFactory.isAuthenticated()
   .then( (user) => {
     currentUser = UserFactory.getUser();
+    fetchGardenArea();
     fetchPlants();
+    fetchTodos();
   });
 
   function fetchPlants() {
-    console.log("routeParams", $routeParams.gardenId);
     let plantArr = [];
     PlantFactory.getPlants($routeParams.gardenId)
     .then( (plantList) => {
@@ -23,34 +22,92 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, User
         plantArr.push(plantData[key]);
       });
       $scope.plants = plantArr;
-      console.log("plants controller?", plantArr);
+      printGarden(plantArr);
     });
   }
 
-  function printGarden(garden) {
-    // We saved nested data (gasp!), so this is how to mine down into it to get the
-    // object of objects we need
-    console.log("garden object", garden);
-    let gardenObjects = garden[Object.keys(garden)[0]];
+  function printGarden(plantArr) {
     let canvas = $("#graphCanvas2")[0];
-    for( let plant in gardenObjects ) {
-      let imgName = garden.plant1.imgName;
-      console.log("img", imgName);
-      let $img = $(`#${imgName}`);
-      console.log("img???", garden.plant1.$img[0]);
+    plantArr.forEach((plant) => {
+      let imgName = plant.imgName;
+      let $img = $(`#${imgName}`)[0];
       canvas
-      .getContext("2d").drawImage($img[0], gardenObjects[plant].xCoord, gardenObjects[plant].yCoord);
-    }
+      .getContext("2d").drawImage($img, plant.xCoord, plant.yCoord);
+    });
   }
 
-  // PlantFactory.getPlants($routeParams.gardenId)
-  // .then( (garden) => {
-  //   console.log("garden item", garden);
-  //   // $scope.selectedItem = garden;
-  //   // printGarden(garden.data);
-  // })
-  // .catch( (err) => {
-  //   console.log("error! No item returned", err );
-  // });
+  function fetchGardenArea() {
+    let gardenArr = [];
+    GardenFactory.getGardenList(currentUser)
+    .then( (gardenList) => {
+      let gardenData = gardenList.data;
+      Object.keys(gardenData).forEach( (key) => {
+        gardenData[key].id = key;
+        gardenArr.push(gardenData[key]);
+      });
+      $scope.gardens = gardenArr;
+      gardenArr.forEach((garden) => {
+        if(garden.id == $routeParams.gardenId) {
+          $scope.gardens.length = garden.length * 96;
+          $scope.gardens.width = garden.width * 96;
+          $scope.gardens.name = garden.name;
+        }
+      });
+    });
+  }
+
+  function fetchTodos() {
+    let todoArr = [];
+    TodoFactory.getTodoList($routeParams.gardenId)
+    .then( (todoList) => {
+      let todoData = todoList.data;
+      Object.keys(todoData).forEach( (key) => {
+        todoData[key].id = key;
+        todoArr.push(todoData[key]);
+      });
+      $scope.todos = todoArr;
+    })
+    .catch( (err) => {
+      console.log("error!", err);
+    });
+  }
+
+  $scope.todoItem = {
+    text: "",
+    date: "",
+    gardenId: $routeParams.gardenId
+  };
+
+  $scope.saveTodo = () => {
+    TodoFactory.postNewTodo($scope.todoItem)
+    .then( (data) => {
+      fetchTodos();
+    });
+  };
+
+  $scope.deleteTodo = (todoId) => {
+    TodoFactory.deleteTodo(todoId)
+    .then( (data) => {
+      fetchTodos();
+    });
+  };
+
+  angular.element('.datepicker').datepicker();
+
+  function fetchVegetables() {
+      let veggieArr = [];
+      GardenFactory.getVegetables()
+      .then( (veggieList) => {
+        let veggieData = veggieList.data;
+        Object.keys(veggieData).forEach( (key) => {
+          veggieData[key].id = key;
+          veggieArr.push(veggieData[key]);
+        });
+        $scope.veggies = veggieArr;
+        veggieArr.forEach((veggie) => {
+            $scope.veggies.name = veggie.name;  
+        });
+      });
+    }
 
 });

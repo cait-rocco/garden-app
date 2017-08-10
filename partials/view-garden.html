@@ -1,3 +1,50 @@
-<h3>Here is where you can print your saved garden</h3>
-    <canvas id="graphCanvas2" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" height=300 width=300 style="border:1px solid #000000;">
-    </canvas>
+
+<div class="ng-hide">
+	<img id="tomato" src="tomato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+    <img id="cucumber" src="cucumber.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+</div>
+
+<h3>{{gardens.name}}</h3>
+
+<canvas id="graphCanvas2" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;">
+</canvas>
+
+<div class=" container boardsContainer">
+  <div class="boardHeader">
+  	<h1>To Do: </h1>
+  	<button class="add-btn" data-toggle="modal" data-target="#myModal">+</button>
+  </div>
+	<div class="row cardColumn">
+	    <div class="col-md-4 boardCard" ng-repeat="todo in todos | orderBy: 'date'">
+	      <button class="delete-btn" ng-click="deleteTodo(todo.id)">X</button>
+	      <div class="boardTitle">{{todo.date}}</div>
+	      <div class="boardTitle">{{todo.text}}</div>
+	    </div>
+	</div>
+</div>
+
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add To do</h4>
+        </div>
+        <div class="modal-body">
+          <div>
+  					To do: <input type="text" ng-model="todoItem.text">
+  				</div>
+  				<div>
+  					Date: <input class="datepicker" data-provide="datepicker" ng-model="todoItem.date">
+  				</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" ng-click="saveTodo()" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -5,10 +5,21 @@
 	<input type="text" ng-model="newGarden.name">
 
 	<label>Enter the longest point of your garden: </label>
-	<input type="text" id="gardenLength" ng-model="newGarden.length">
+	<input type="text" id="gardenLength" ng-model="newGarden.length"><br>
 
 	<label>Enter the widest point of your garden: </label>
-	<input type="text" name="gardenHeight" ng-model="newGarden.width">
+	<input type="text" name="gardenHeight" ng-model="newGarden.width"><br>
+
+	<!-- <div ng-repeat="veggie in veggies">
+		<input type="checkbox" class="veggies" id="{{veggie.name}}" ng-model="newGarden.{{veggie.name}}" value="true">
+		<label>{{veggie.name}}</label><br>
+	</div> -->
+
+	<input type="checkbox" class="veggies" id="tomato" ng-model="newGarden.tomato" value="true">
+	<label>Tomato</label>
+
+	<input type="checkbox" class="veggies" id="cucumber" ng-model="newGarden.cucumber" value="true">
+	<label>Cucumbers</label>
 
 	<button id="buildBtn" ng-click="saveGarden()">Submit</button>
 </div>

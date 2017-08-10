@@ -8,10 +8,11 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
   let plants = [];
   let currentUser = null;
 
-  // UserFactory.isAuthenticated()
-  // .then( (user) => {
-  //   currentUser = UserFactory.getUser();
-  // });
+  UserFactory.isAuthenticated()
+  .then( (user) => {
+    currentUser = UserFactory.getUser();
+    fetchGardenArea();
+  });
 
   $scope.allowDrop = (ev) => {
       ev.preventDefault();
@@ -52,7 +53,6 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
   $scope.viewSavedGarden = () => {
     PlantFactory.saveNewPlants(plants)
     .then( (garden) => {
-      console.log("garden", garden.data);
       $window.location.href = `#!/gardens/detail/${$routeParams.gardenId}`;
     })
     .catch( (err) => {
@@ -64,5 +64,45 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
    $route.reload();
   };
 
-});
+  function fetchGardenArea() {
+    let gardenArr = [];
+    GardenFactory.getGardenList(currentUser)
+    .then( (gardenList) => {
+      let gardenData = gardenList.data;
+      Object.keys(gardenData).forEach( (key) => {
+        gardenData[key].id = key;
+        gardenArr.push(gardenData[key]);
+      });
+      $scope.gardens = gardenArr;
+      gardenArr.forEach((garden) => {
+        if(garden.id == $routeParams.gardenId) {
+          $scope.gardens.length = garden.length * 96;
+          $scope.gardens.width = garden.width * 96;
+          if(garden.tomato === false) {
+            $('#tomato').hide();
+          }
+          if(garden.cucumber === false) {
+            $('#cucumber').hide();
+          }
+        }
+      });
+    });
+  }
 
+  function fetchVegetables() {
+      let veggieArr = [];
+      GardenFactory.getVegetables()
+      .then( (veggieList) => {
+        let veggieData = veggieList.data;
+        Object.keys(veggieData).forEach( (key) => {
+          veggieData[key].id = key;
+          veggieArr.push(veggieData[key]);
+        });
+        $scope.veggies = veggieArr;
+        veggieArr.forEach((veggie) => {
+            $scope.veggies.name = veggie.name;  
+        });
+      });
+    }
+
+});

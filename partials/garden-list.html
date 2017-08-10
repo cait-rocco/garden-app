@@ -9,11 +9,15 @@
   <div>
     <!-- What's going on with this filter? PFM, that's what -->
     <div class="panel panel-default"
-         ng-repeat="garden in gardens | filter: {task: searchText.searchTerm}">
+         ng-repeat="garden in gardens">
       <div class="panel-body">
         
         <div class="col-xs-7 task" ng-click="viewSavedGarden(garden.id)">{{garden.name}}</div>
-        <div class="col-xs-1 delete"><button class="btn btn-danger" ng-click="deleteGarden(garden.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+        <div class="col-xs-1 delete">
+          <button class="btn btn-danger" ng-click="openModal(garden.id)">X
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

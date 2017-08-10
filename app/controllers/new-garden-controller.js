@@ -5,21 +5,44 @@ gardenApp.controller("NewGardenController", function($scope, $window, $route, Us
 	let garden = {};
 	let currentUser = null;
 
+	UserFactory.isAuthenticated()
+  	.then( (user) => {
+	    currentUser = UserFactory.getUser();
+	    fetchVegetables();
+  	});
+
 	$scope.newGarden = {
     	name: "",
-    	//TODO get length and width multiplied by 96 and made a number
     	length: "",
     	width: "",
+    	tomato: false,
+    	cucumber: false
+    	// {{vegetable}}: false
 	};
 
 	$scope.saveGarden = () => {
 	    $scope.newGarden.uid = UserFactory.getUser();
 		GardenFactory.saveNewGarden($scope.newGarden)
 		.then((data) => {
-			console.log("save worked", data);
 			$window.location.href = `/#!/add-plants/${data.data.name}`;
+			fetchVegetables();
 		});
-		// $route.reload();
 	};
 
+	function fetchVegetables() {
+	    let veggieArr = [];
+	    GardenFactory.getVegetables()
+	    .then( (veggieList) => {
+	      let veggieData = veggieList.data;
+	      Object.keys(veggieData).forEach( (key) => {
+	        veggieData[key].id = key;
+	        veggieArr.push(veggieData[key]);
+	      });
+	      $scope.veggies = veggieArr;
+	      veggieArr.forEach((veggie) => {
+	          $scope.veggies.name = veggie.name;  
+	      });
+	    });
+  	}
+	
  });

@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+		<link rel="stylesheet" href="lib/node_modules/tingle.js/dist/tingle.min.css">
     </head>
 
     <body ng-app="GardenApp">
@@ -12,13 +14,13 @@
 		<nav>
 		    <ul>
 
-<section class="user-login" ng-show="!isLoggedIn" >
-  <h1>Login</h1>
-  <div ng-click="isLoggedIn = !isLoggedIn">
-    <button ng-controller="UserController" class="btn btn-info" ng-click="login()">Log in</button>
-    <!-- <button class="btn btn-info" ng-click="logout()">Log out</button> -->
-  </div>
-</section>
+				<section class="user-login" ng-show="!isLoggedIn" >
+				  <h1>Login</h1>
+				  <div ng-click="isLoggedIn = !isLoggedIn">
+				    <button ng-controller="UserController" class="btn btn-info" ng-click="login()">Log in</button>
+				    <!-- <button class="btn btn-info" ng-click="logout()">Log out</button> -->
+				  </div>
+				</section>
 
 		      <!-- <li class="nav-item" ng-show="!isLoggedIn" ng-click="isLoggedIn = !isLoggedIn">
 		        <a class="nav-link" ng-href="#!/">Login</a>
@@ -37,6 +39,8 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="lib/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<script src="lib/node_modules/tingle.js/dist/tingle.min.js"></script>
 
 	<!-- Angular scripts -->
 	<script src="lib/node_modules/angular/angular.min.js"></script>
@@ -51,6 +55,7 @@
 	<script src="app/factories/user-factory.js"></script>
 	<script src="app/factories/garden-factory.js"></script>
 	<script src="app/factories/plant-factory.js"></script>
+	<script src="app/factories/todo-factory.js"></script>
 	
 	<!-- Controllers -->
 	<script src="app/controllers/user-controller.js"></script>
@@ -59,6 +64,7 @@
 	<script src="app/controllers/new-garden-controller.js"></script>
 	<script src="app/controllers/add-plants-controller.js"></script>
 	<script src="app/controllers/view-garden-controller.js"></script>
+	<script src="app/controllers/todo-controller.js"></script>
         
     </body>
 </html>
