@@ -70,7 +70,6 @@ function deleteRelatedTodos(gardenId) {
   $scope.viewSavedGarden = (gardenId) => {
     PlantFactory.getPlants($routeParams.gardenId)
     .then( (garden) => {
-      $window.location.href = `#!/gardens/detail/${gardenId}`;
     })
     .catch( (err) => {
       console.log("error! No item returned", err );
@@ -84,10 +83,6 @@ var modal = new tingle.modal({
     closeMethods: ['overlay', 'button', 'escape'],
     closeLabel: "Close",
     cssClass: ['custom-class-1', 'custom-class-2'],
-    // onOpen: function() {
-    // },
-    // onClose: function() {
-    // },
     beforeClose: function() {
       return true;
     }

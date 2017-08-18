@@ -76,12 +76,21 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
       $scope.gardens = gardenArr;
       gardenArr.forEach((garden) => {
         if(garden.id == $routeParams.gardenId) {
-          $scope.gardens.length = garden.length * 96;
-          $scope.gardens.width = garden.width * 96;
+          $scope.gardens.length = garden.length * 100;
+          $scope.gardens.width = garden.width * 100;
           if(garden.tomato === false) {
             $('#tomato').hide();
           }
           if(garden.cucumber === false) {
+            $('#cucumber').hide();
+          }
+          if(garden.carrot === false) {
+            $('#cucumber').hide();
+          }
+          if(garden.onion === false) {
+            $('#cucumber').hide();
+          }
+          if(garden.potato === false) {
             $('#cucumber').hide();
           }
         }
@@ -105,4 +114,29 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
       });
     }
 
+// instanciate new modal
+var modal = new tingle.modal({
+    footer: true,
+    stickyFooter: false,
+    closeMethods: ['overlay', 'button', 'escape'],
+    closeLabel: "Close",
+    cssClass: ['custom-class-1', 'custom-class-2'],
+    beforeClose: function() {
+      return true;
+    }
 });
+
+  $scope.openModal = (gardenId) => {
+    modal.open();
+    modal.setContent('<h1>Deleting a garden will delete all associated plants and to-do items.</h1>');
+    modal.addFooterBtn('Cancel', 'tingle-btn tingle-btn--primary', function() {
+      modal.close();
+    });
+    modal.addFooterBtn('Confirm', 'tingle-btn tingle-btn--danger', function() {
+      $scope.deleteGarden(gardenId);
+      modal.close();
+    });
+  };
+
+});
+

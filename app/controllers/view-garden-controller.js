@@ -48,8 +48,8 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
       $scope.gardens = gardenArr;
       gardenArr.forEach((garden) => {
         if(garden.id == $routeParams.gardenId) {
-          $scope.gardens.length = garden.length * 96;
-          $scope.gardens.width = garden.width * 96;
+          $scope.gardens.length = garden.length * 100;
+          $scope.gardens.width = garden.width * 100;
           $scope.gardens.name = garden.name;
         }
       });
