@@ -1,7 +1,11 @@
 <div class="addBackground">
-
+<div>
+  <a class="navLinkTabs" href="#!/gardens">Cancel</a>
+  <a class="navLinkTabs" href="" ng-click="viewSavedGarden()">Save Garden</a>
+  <a class="navLinkTabs" href="" ng-click="clearPlants()">Start Over</a>
+</div>
     <!-- Any elements before the canvas are making it drop in weird places. Why? -->
-    <h3>Here is where you can make a new garden</h3>
+    <h3>Plan your new garden</h3>
 
     <!-- <div class="divWrapper" ng-repeat="veggie in veggies">
         <img id="{{veggie.name}}" ng-src="{{veggie.name}}.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
@@ -9,10 +13,10 @@
 <div class="viewGarden">
 <div class="plantingTips">
   <h4>Planting Tips</h4>
-  <a href="" class="tomato" ng-click="openModal(0)">Tomato</a><br>
-  <a href="" class="cucumber" ng-click="openModal(1)">Cucumber</a><br>
-  <a href="" class="onion" ng-click="openModal(2)">Onion</a><br>
-  <a href="" class="potato" ng-click="openModal(3)">Potato</a><br>
+  <a href="" class="tomato" ng-click="openModal(0)">Tomato<br></a>
+  <a href="" class="cucumber" ng-click="openModal(1)">Cucumber<br></a>
+  <a href="" class="onion" ng-click="openModal(2)">Onion<br></a>
+  <a href="" class="potato" ng-click="openModal(3)">Potato<br></a>
   <a href="" class="carrot" ng-click="openModal(4)">Carrot</a>
 </div>
 
@@ -34,9 +38,6 @@
         </div>
     </div>
     </div>
-
-    <button ng-click="viewSavedGarden()">Save Garden</button>
-    <button ng-click="clearPlants()">Start Over</button>
 
   </div>
 

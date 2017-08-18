@@ -80,25 +80,30 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
           $scope.gardens.width = garden.width * 100;
           if(garden.tomato === false) {
             $('#tomato').hide();
+            $('.tomato').hide();
           }
           if(garden.cucumber === false) {
             $('#cucumber').hide();
+            $('.cucumber').hide();
           }
           if(garden.carrot === false) {
             $('#carrot').hide();
+            $('.carrot').hide();
           }
           if(garden.onion === false) {
             $('#onion').hide();
+            $('.onion').hide();
           }
           if(garden.potato === false) {
             $('#potato').hide();
+            $('.potato').hide();
           }
         }
       });
     });
   }
 
-  function fetchVegetables() {
+  function fetchVegetables(veggieId) {
       let veggieArr = [];
       GardenFactory.getVegetables()
       .then( (veggieList) => {
@@ -109,7 +114,11 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
         });
         $scope.veggies = veggieArr;
         veggieArr.forEach((veggie) => {
-            $scope.veggies.name = veggie.name;  
+          if(veggieId == veggie.id) {
+            // $scope.veggies.name = veggie.name;  
+            // $scope.veggies.test = veggie.test;
+            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><p>${veggie.test}</p>`);
+          }
         });
       });
     }
@@ -120,22 +129,16 @@ var modal = new tingle.modal({
     stickyFooter: false,
     closeMethods: ['overlay', 'button', 'escape'],
     closeLabel: "Close",
-    cssClass: ['custom-class-1', 'custom-class-2'],
+    cssClass: ['custom-class-2'],
     beforeClose: function() {
       return true;
     }
 });
 
-  $scope.openModal = (gardenId) => {
+  $scope.openModal = (veggieId) => {
     modal.open();
-    modal.setContent('<h1>Deleting a garden will delete all associated plants and to-do items.</h1>');
-    modal.addFooterBtn('Cancel', 'tingle-btn tingle-btn--primary', function() {
-      modal.close();
-    });
-    modal.addFooterBtn('Confirm', 'tingle-btn tingle-btn--danger', function() {
-      $scope.deleteGarden(gardenId);
-      modal.close();
-    });
+    fetchVegetables(veggieId);
+    // modal.setContent('<h1>Deleting a garden will delete all associated plants and to-do items.</h1><p>${veggie.test}</p>');
   };
 
 });

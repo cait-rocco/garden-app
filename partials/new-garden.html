@@ -1,4 +1,8 @@
 <div class="newGarden">
+<div>
+  <a class="navLinkTabs" href="" ng-click="cancelNew()">Cancel</a>
+  <a class="navLinkTabs" href="" ng-click="gardenForm.$valid && saveGarden()">Continue</a>
+</div>
 <div class="gardenForm">
 	<h1>Enter some details about your garden: </h1><br><br>
 <form name="gardenForm">
@@ -33,8 +37,8 @@
 	<label>Carrots</label><br>
 
 	<!-- <button class="btn" ng-click="saveGarden()">Submit</button> -->
-	<input type="submit" class="btn" ng-click="gardenForm.$valid && saveGarden()">
-	<button class="btn" ng-click="cancelNew()">Cancel</button>
+	<!-- <input type="submit" class="btn" ng-click="gardenForm.$valid && saveGarden()"> -->
+
 	</div>
 	</form>
 </div>
