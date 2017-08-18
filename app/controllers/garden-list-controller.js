@@ -82,7 +82,7 @@ var modal = new tingle.modal({
     stickyFooter: false,
     closeMethods: ['overlay', 'button', 'escape'],
     closeLabel: "Close",
-    cssClass: ['custom-class-1', 'custom-class-2'],
+    cssClass: ['custom-class-2'],
     beforeClose: function() {
       return true;
     }

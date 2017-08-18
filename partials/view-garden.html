@@ -1,4 +1,4 @@
-<div class="viewBackground">
+<div class="viewBackground" ng-cloak>
 <div class="navLinks">
   <a ng-href="#!/logout" ng-click="logout()">Logout</a>
   <a ng-href="#!/new-garden">Create a New Garden</a>
@@ -8,6 +8,16 @@
 <div class="viewPage">
 <h3>{{gardens.name}}</h3><br>
 <div class="viewGarden">
+
+<div class="plantingTips">
+  <h4>Planting Tips</h4>
+  <a href="" class="tomato" ng-click="openModal(0)">Tomato</a><br>
+  <a href="" class="cucumber" ng-click="openModal(1)">Cucumber</a><br>
+  <a href="" class="onion" ng-click="openModal(2)">Onion</a><br>
+  <a href="" class="potato" ng-click="openModal(3)">Potato</a><br>
+  <a href="" class="carrot" ng-click="openModal(4)">Carrot</a>
+</div>
+
 <canvas id="graphCanvas2" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;">
 </canvas>
 
@@ -30,13 +40,14 @@
 	</div>
   </div>
 </div>
+
 </div>
 </div>
 </div>
   <!-- Button trigger modal -->
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-model="">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -70,30 +81,3 @@
 
   <img id="carrot" src="carrot.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
 </div>
-
-<div>
-  <a ng-href="#" data-toggle="modal" data-target="#veggieModal">Tomato</a>
-</div>
-
-<div class="modal fade" id="veggieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-model="">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Add To do</h4>
-        </div>
-        <div class="modal-body">
-          <div>
-            To do: <input type="text" ng-model="todoItem.text">
-          </div>
-          <div>
-            Date: <input class="datepicker" data-provide="datepicker" ng-model="todoItem.date">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" ng-click="saveTodo()" data-dismiss="modal">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>

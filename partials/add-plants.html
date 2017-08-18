@@ -1,10 +1,24 @@
-<div >
+<div class="addBackground">
+
     <!-- Any elements before the canvas are making it drop in weird places. Why? -->
     <h3>Here is where you can make a new garden</h3>
 
     <!-- <div class="divWrapper" ng-repeat="veggie in veggies">
         <img id="{{veggie.name}}" ng-src="{{veggie.name}}.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
     </div> -->
+<div class="viewGarden">
+<div class="plantingTips">
+  <h4>Planting Tips</h4>
+  <a href="" class="tomato" ng-click="openModal(0)">Tomato</a><br>
+  <a href="" class="cucumber" ng-click="openModal(1)">Cucumber</a><br>
+  <a href="" class="onion" ng-click="openModal(2)">Onion</a><br>
+  <a href="" class="potato" ng-click="openModal(3)">Potato</a><br>
+  <a href="" class="carrot" ng-click="openModal(4)">Carrot</a>
+</div>
+
+    <div>
+        <canvas class="divWrapper" id="graphCanvas" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;"></canvas>
+    </div>
 
     <div class="veggieCrate">
         <div class="veggies">
@@ -19,13 +33,6 @@
             <img id="carrot" src="carrot.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
         </div>
     </div>
-
-    <div>
-        <canvas class="divWrapper" id="graphCanvas" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;"></canvas>
-    </div><br>
-
-    <div class="plantingTips">
-        <div class="tomato">Tomato</div>
     </div>
 
     <button ng-click="viewSavedGarden()">Save Garden</button>
@@ -33,4 +40,3 @@
 
   </div>
 
-  

@@ -85,13 +85,13 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
             $('#cucumber').hide();
           }
           if(garden.carrot === false) {
-            $('#cucumber').hide();
+            $('#carrot').hide();
           }
           if(garden.onion === false) {
-            $('#cucumber').hide();
+            $('#onion').hide();
           }
           if(garden.potato === false) {
-            $('#cucumber').hide();
+            $('#potato').hide();
           }
         }
       });

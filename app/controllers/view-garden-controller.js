@@ -51,6 +51,21 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
           $scope.gardens.length = garden.length * 100;
           $scope.gardens.width = garden.width * 100;
           $scope.gardens.name = garden.name;
+          if(garden.tomato === false) {
+            $('.tomato').hide();
+          }
+          if(garden.cucumber === false) {
+            $('.cucumber').hide();
+          }
+          if(garden.carrot === false) {
+            $('.carrot').hide();
+          }
+          if(garden.onion === false) {
+            $('.onion').hide();
+          }
+          if(garden.potato === false) {
+            $('.potato').hide();
+          }
         }
       });
     });
@@ -94,7 +109,7 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
 
   angular.element('.datepicker').datepicker();
 
-  function fetchVegetables() {
+  function fetchVegetables(veggieId) {
       let veggieArr = [];
       GardenFactory.getVegetables()
       .then( (veggieList) => {
@@ -105,9 +120,32 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
         });
         $scope.veggies = veggieArr;
         veggieArr.forEach((veggie) => {
-            $scope.veggies.name = veggie.name;  
+          if(veggieId == veggie.id) {
+            // $scope.veggies.name = veggie.name;  
+            // $scope.veggies.test = veggie.test;
+            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><p>${veggie.test}</p>`);
+          }
         });
       });
     }
 
+// instanciate new modal
+var modal = new tingle.modal({
+    footer: true,
+    stickyFooter: false,
+    closeMethods: ['overlay', 'button', 'escape'],
+    closeLabel: "Close",
+    cssClass: ['custom-class-2'],
+    beforeClose: function() {
+      return true;
+    }
 });
+
+  $scope.openModal = (veggieId) => {
+    modal.open();
+    fetchVegetables(veggieId);
+    // modal.setContent('<h1>Deleting a garden will delete all associated plants and to-do items.</h1><p>${veggie.test}</p>');
+  };
+
+});
+
