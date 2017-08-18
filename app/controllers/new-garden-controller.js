@@ -16,7 +16,10 @@ gardenApp.controller("NewGardenController", function($scope, $window, $route, Us
     	length: "",
     	width: "",
     	tomato: false,
-    	cucumber: false
+    	cucumber: false,
+    	potato: false,
+    	carrot: false,
+    	onion: false
     	// {{vegetable}}: false
 	};
 
@@ -44,5 +47,9 @@ gardenApp.controller("NewGardenController", function($scope, $window, $route, Us
 	      });
 	    });
   	}
+
+  	$scope.cancelNew = () => {
+  		$window.location.href = '/#!/gardens';
+  	};
 	
  });

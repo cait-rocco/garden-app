@@ -6,18 +6,31 @@
         <img id="{{veggie.name}}" ng-src="{{veggie.name}}.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
     </div> -->
 
-    <img id="tomato" src="tomato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+    <div class="veggieCrate">
+        <div class="veggies">
+            <img id="tomato" src="tomato1.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
 
-    <img id="cucumber" src="cucumber.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="cucumber" src="cucumber1.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
 
-        <!-- <img id="onion" src="onion.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/> -->
-    <!-- </div> -->
+            <img id="onion" src="onion.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+
+            <img id="potato" src="potato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+
+            <img id="carrot" src="carrot.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+        </div>
+    </div>
 
     <div>
         <canvas class="divWrapper" id="graphCanvas" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;"></canvas>
     </div><br>
 
+    <div class="plantingTips">
+        <div class="tomato">Tomato</div>
+    </div>
+
     <button ng-click="viewSavedGarden()">Save Garden</button>
     <button ng-click="clearPlants()">Start Over</button>
 
   </div>
+
+  

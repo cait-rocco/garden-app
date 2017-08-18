@@ -1,19 +1,21 @@
-<div>
-	<h1>Build Garden</h1>
+<div class="newGarden">
+<div class="gardenForm">
+	<h1>Enter some details about your garden: </h1><br><br>
 
-	<label>Enter the name of your garden: </label>
-	<input type="text" ng-model="newGarden.name">
+	<label>Name this garden: </label>
+	<input type="text" ng-model="newGarden.name"><br>
 
-	<label>Enter the longest point of your garden: </label>
-	<input type="text" id="gardenLength" ng-model="newGarden.length"><br>
+	<label>How long is your garden: </label>
+	<input type="text" id="gardenLength" ng-model="newGarden.length" placeholder="in feet"><br>
 
-	<label>Enter the widest point of your garden: </label>
-	<input type="text" name="gardenHeight" ng-model="newGarden.width"><br>
+	<label>How wide is your garden: </label>
+	<input type="text" name="gardenHeight" ng-model="newGarden.width" placeholder="in feet"><br>
 
 	<!-- <div ng-repeat="veggie in veggies">
 		<input type="checkbox" class="veggies" id="{{veggie.name}}" ng-model="newGarden.{{veggie.name}}" value="true">
 		<label>{{veggie.name}}</label><br>
 	</div> -->
+	<h4>What are you growing: </h4>
 
 	<input type="checkbox" class="veggies" id="tomato" ng-model="newGarden.tomato" value="true">
 	<label>Tomato</label>
@@ -21,5 +23,16 @@
 	<input type="checkbox" class="veggies" id="cucumber" ng-model="newGarden.cucumber" value="true">
 	<label>Cucumbers</label>
 
-	<button id="buildBtn" ng-click="saveGarden()">Submit</button>
+	<input type="checkbox" class="veggies" id="onion" ng-model="newGarden.onion" value="true">
+	<label>Onions</label>
+
+	<input type="checkbox" class="veggies" id="potato" ng-model="newGarden.potato" value="true">
+	<label>Potatos</label>
+
+	<input type="checkbox" class="veggies" id="carrot" ng-model="newGarden.carrot" value="true">
+	<label>Carrots</label><br>
+
+	<button class="btn" ng-click="saveGarden()">Submit</button>
+	<button class="btn" ng-click="cancelNew()">Cancel</button>
+	</div>
 </div>

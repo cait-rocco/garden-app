@@ -7,30 +7,13 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
 		<link rel="stylesheet" href="lib/node_modules/tingle.js/dist/tingle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     </head>
 
     <body ng-app="GardenApp">
+    <h1 class="logo">green thumb</h1>
 
-		<nav>
-		    <ul>
-
-				<section class="user-login" ng-show="!isLoggedIn" >
-				  <h1>Login</h1>
-				  <div ng-click="isLoggedIn = !isLoggedIn">
-				    <button ng-controller="UserController" class="btn btn-info" ng-click="login()">Log in</button>
-				    <!-- <button class="btn btn-info" ng-click="logout()">Log out</button> -->
-				  </div>
-				</section>
-
-		      <!-- <li class="nav-item" ng-show="!isLoggedIn" ng-click="isLoggedIn = !isLoggedIn">
-		        <a class="nav-link" ng-href="#!/">Login</a>
-		      </li> -->
-		      <li class="nav-item" ng-show="isLoggedIn" ng-click="isLoggedIn = !isLoggedIn">
-		        <a class="nav-link" ng-href="#!/logout" ng-click="logout()">Logout</a>
-		        <a class='nav-link' ng-href="#!/new-garden">Create a New Garden</a>
-		      </li>
-		    </ul>
-		</nav>
 
 		<div ng-view></div>
 
