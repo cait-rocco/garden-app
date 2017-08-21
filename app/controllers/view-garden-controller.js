@@ -66,6 +66,42 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
           if(garden.potato === false) {
             $('.potato').hide();
           }
+          if(garden.lettuce === false) {
+            $('.lettuce').hide();
+          }
+          if(garden.radishes === false) {
+            $('.radishes').hide();
+          }
+          if(garden.cabbage === false) {
+            $('.cabbage').hide();
+          }
+          if(garden.pepper === false) {
+            $('.pepper').hide();
+          }
+          if(garden.corn === false) {
+            $('.corn').hide();
+          }
+          if(garden.broccoli === false) {
+            $('.broccoli').hide();
+          }
+          if(garden.peas === false) {
+            $('.peas').hide();
+          }
+          if(garden.garlic === false) {
+            $('.garlic').hide();
+          }
+          if(garden.greenBeans === false) {
+            $('.greenBeans').hide();
+          }
+          if(garden.eggplant === false) {
+            $('.eggplant').hide();
+          }
+          if(garden.chiliPepper === false) {
+            $('.chiliPepper').hide();
+          }
+          if(garden.redPotato === false) {
+            $('.redPotato').hide();
+          }
         }
       });
     });
@@ -123,7 +159,7 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
           if(veggieId == veggie.id) {
             // $scope.veggies.name = veggie.name;  
             // $scope.veggies.test = veggie.test;
-            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><h4>Sun Requirements: </h4><p>${veggie.sun}</p><h4>Spacing: </h4><p>${veggie.space}</p><h4>Watering: </h4><p>${veggie.water}</p><h4>Timeline: </h4><p>${veggie.time}</p><h4>More Info: </h4><p><a href="${veggie.website}" target="_blank">Farmer's Almanac</a></p>`);
+            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><h4>Sun Requirements: </h4><p>${veggie.sun}</p><h4>Spacing: </h4><p>${veggie.space}</p><h4>Watering: </h4><p>${veggie.water}</p><h4>Companions: </h4><p>${veggie.companions}</p><h4>Timeline: </h4><p>${veggie.time}</p><h4>More Info: </h4><p><a href="${veggie.website}" target="_blank">Farmer's Almanac</a></p>`);
           }
         });
       });

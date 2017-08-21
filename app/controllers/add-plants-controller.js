@@ -98,6 +98,54 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
             $('#potato').hide();
             $('.potato').hide();
           }
+          if(garden.lettuce === false) {
+            $('#lettuce').hide();
+            $('.lettuce').hide();
+          }
+          if(garden.cabbage === false) {
+            $('#cabbage').hide();
+            $('.cabbage').hide();
+          }
+          if(garden.radishes === false) {
+            $('#radishes').hide();
+            $('.radishes').hide();
+          }
+          if(garden.pepper === false) {
+            $('#pepper').hide();
+            $('.pepper').hide();
+          }
+          if(garden.corn === false) {
+            $('#corn').hide();
+            $('.corn').hide();
+          }
+          if(garden.broccoli === false) {
+            $('#broccoli').hide();
+            $('.broccoli').hide();
+          }
+          if(garden.peas === false) {
+            $('#peas').hide();
+            $('.peas').hide();
+          }
+          if(garden.garlic === false) {
+            $('#garlic').hide();
+            $('.garlic').hide();
+          }
+          if(garden.greenBeans === false) {
+            $('#greenBeans').hide();
+            $('.greenBeans').hide();
+          }
+          if(garden.eggplant === false) {
+            $('#eggplant').hide();
+            $('.eggplant').hide();
+          }
+          if(garden.chiliPepper === false) {
+            $('#chiliPepper').hide();
+            $('.chiliPepper').hide();
+          }
+          if(garden.redPotato === false) {
+            $('#redPotato').hide();
+            $('.redPotato').hide();
+          }
         }
       });
     });
@@ -117,7 +165,7 @@ gardenApp.controller('AddPlantsController', function($scope, $route, $window, $r
           if(veggieId == veggie.id) {
             // $scope.veggies.name = veggie.name;  
             // $scope.veggies.test = veggie.test;
-            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><p>${veggie.test}</p>`);
+            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><h4>Sun Requirements: </h4><p>${veggie.sun}</p><h4>Spacing: </h4><p>${veggie.space}</p><h4>Watering: </h4><p>${veggie.water}</p><h4>Companions: </h4><p>${veggie.companions}</p><h4>Timeline: </h4><p>${veggie.time}</p><h4>More Info: </h4><p><a href="${veggie.website}" target="_blank">Farmer's Almanac</a></p>`);
           }
         });
       });
