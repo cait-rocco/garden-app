@@ -48,7 +48,6 @@ gardenApp.factory("TodoFactory", function($q, $http, FirebaseUrl) {
 
   let deleteTodo = (todoId) => {
     return $q( (resolve, reject) => {
-      console.log("todoId", todoId);
       if (todoId) {
         $http.delete(`${FirebaseUrl}todos/${todoId}.json`)
         .then( (data) => {
