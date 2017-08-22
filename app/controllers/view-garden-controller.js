@@ -51,6 +51,57 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
           $scope.gardens.length = garden.length * 100;
           $scope.gardens.width = garden.width * 100;
           $scope.gardens.name = garden.name;
+          if(garden.tomato === false) {
+            $('.tomato').hide();
+          }
+          if(garden.cucumber === false) {
+            $('.cucumber').hide();
+          }
+          if(garden.carrot === false) {
+            $('.carrot').hide();
+          }
+          if(garden.onion === false) {
+            $('.onion').hide();
+          }
+          if(garden.potato === false) {
+            $('.potato').hide();
+          }
+          if(garden.lettuce === false) {
+            $('.lettuce').hide();
+          }
+          if(garden.radishes === false) {
+            $('.radishes').hide();
+          }
+          if(garden.cabbage === false) {
+            $('.cabbage').hide();
+          }
+          if(garden.pepper === false) {
+            $('.pepper').hide();
+          }
+          if(garden.corn === false) {
+            $('.corn').hide();
+          }
+          if(garden.broccoli === false) {
+            $('.broccoli').hide();
+          }
+          if(garden.peas === false) {
+            $('.peas').hide();
+          }
+          if(garden.garlic === false) {
+            $('.garlic').hide();
+          }
+          if(garden.greenBeans === false) {
+            $('.greenBeans').hide();
+          }
+          if(garden.eggplant === false) {
+            $('.eggplant').hide();
+          }
+          if(garden.chiliPepper === false) {
+            $('.chiliPepper').hide();
+          }
+          if(garden.redPotato === false) {
+            $('.redPotato').hide();
+          }
         }
       });
     });
@@ -94,7 +145,7 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
 
   angular.element('.datepicker').datepicker();
 
-  function fetchVegetables() {
+  function fetchVegetables(veggieId) {
       let veggieArr = [];
       GardenFactory.getVegetables()
       .then( (veggieList) => {
@@ -105,9 +156,32 @@ gardenApp.controller('ViewGardenController', function($scope, $routeParams, $rou
         });
         $scope.veggies = veggieArr;
         veggieArr.forEach((veggie) => {
-            $scope.veggies.name = veggie.name;  
+          if(veggieId == veggie.id) {
+            // $scope.veggies.name = veggie.name;  
+            // $scope.veggies.test = veggie.test;
+            modal.setContent(`<img src="${veggie.pic}"><h1>${veggie.name}</h1><h4>Sun Requirements: </h4><p>${veggie.sun}</p><h4>Spacing: </h4><p>${veggie.space}</p><h4>Watering: </h4><p>${veggie.water}</p><h4>Companions: </h4><p>${veggie.companions}</p><h4>Timeline: </h4><p>${veggie.time}</p><h4>More Info: </h4><p><a href="${veggie.website}" target="_blank">Farmer's Almanac</a></p>`);
+          }
         });
       });
     }
 
+// instanciate new modal
+var modal = new tingle.modal({
+    footer: true,
+    stickyFooter: false,
+    closeMethods: ['overlay', 'button', 'escape'],
+    closeLabel: "Close",
+    cssClass: ['custom-class-2'],
+    beforeClose: function() {
+      return true;
+    }
 });
+
+  $scope.openModal = (veggieId) => {
+    modal.open();
+    fetchVegetables(veggieId);
+    // modal.setContent('<h1>Deleting a garden will delete all associated plants and to-do items.</h1><p>${veggie.test}</p>');
+  };
+
+});
+

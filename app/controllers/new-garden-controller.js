@@ -19,7 +19,19 @@ gardenApp.controller("NewGardenController", function($scope, $window, $route, Us
     	cucumber: false,
     	potato: false,
     	carrot: false,
-    	onion: false
+    	onion: false,
+    	lettuce: false,
+    	radishes: false,
+    	cabbage: false,
+    	pepper: false,
+    	corn: false,
+    	broccoli:false,
+    	peas: false,
+    	garlic: false,
+    	greenBeans: false,
+    	eggplant: false,
+    	chiliPepper: false,
+    	redPotato: false
     	// {{vegetable}}: false
 	};
 

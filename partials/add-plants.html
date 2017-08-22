@@ -1,10 +1,40 @@
-<div >
+<div class="addBackground">
+<div>
+  <a class="navLinkTabs" href="#!/gardens">Cancel</a>
+  <a class="navLinkTabs" href="" ng-click="viewSavedGarden()">Save Garden</a>
+  <a class="navLinkTabs" href="" ng-click="clearPlants()">Start Over</a>
+</div>
     <!-- Any elements before the canvas are making it drop in weird places. Why? -->
-    <h3>Here is where you can make a new garden</h3>
+    <h3>Plan your new garden</h3>
 
     <!-- <div class="divWrapper" ng-repeat="veggie in veggies">
         <img id="{{veggie.name}}" ng-src="{{veggie.name}}.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
     </div> -->
+<div class="viewGarden">
+<div class="plantingTips">
+  <h4>Planting Tips</h4>
+  <a href="" class="tomato" ng-click="openModal(0)">Tomato<br></a>
+  <a href="" class="cucumber" ng-click="openModal(1)">Cucumber<br></a>
+  <a href="" class="onion" ng-click="openModal(2)">Onion<br></a>
+  <a href="" class="potato" ng-click="openModal(3)">Potato<br></a>
+  <a href="" class="carrot" ng-click="openModal(4)">Carrot<br></a>
+  <a href="" class="lettuce" ng-click="openModal(5)">Lettuce<br></a>
+  <a href="" class="radishes" ng-click="openModal(6)">Radish<br></a>
+  <a href="" class="cabbage" ng-click="openModal(7)">Cabbage<br></a>
+  <a href="" class="pepper" ng-click="openModal(8)">Pepper<br></a>
+  <a href="" class="corn" ng-click="openModal(9)">Corn<br></a>
+  <a href="" class="broccoli" ng-click="openModal(10)">Broccoli<br></a>
+  <a href="" class="peas" ng-click="openModal(11)">Peas<br></a>
+  <a href="" class="garlic" ng-click="openModal(12)">Garlic<br></a>
+  <a href="" class="greenBeans" ng-click="openModal(13)">Green Beans<br></a>
+  <a href="" class="eggplant" ng-click="openModal(14)">Eggplant<br></a>
+  <a href="" class="chiliPepper" ng-click="openModal(15)">Chili Pepper<br></a>
+  <a href="" class="redPotato" ng-click="openModal(16)">Red Potato</a>
+</div>
+
+    <div>
+        <canvas class="divWrapper" id="graphCanvas" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;"></canvas>
+    </div>
 
     <div class="veggieCrate">
         <div class="veggies">
@@ -17,20 +47,21 @@
             <img id="potato" src="potato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
 
             <img id="carrot" src="carrot.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="lettuce" src="lettuce.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="radishes" src="radishes.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="cabbage" src="cabbage.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="pepper" src="pepper.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="corn" src="corn.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="broccoli" src="broccoli.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="peas" src="peas.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="garlic" src="garlic.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="greenBeans" src="greenBeans.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="eggplant" src="eggplant.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="chiliPepper" src="chiliPepper.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+            <img id="redPotato" src="redPotato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
         </div>
     </div>
-
-    <div>
-        <canvas class="divWrapper" id="graphCanvas" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;"></canvas>
-    </div><br>
-
-    <div class="plantingTips">
-        <div class="tomato">Tomato</div>
     </div>
-
-    <button ng-click="viewSavedGarden()">Save Garden</button>
-    <button ng-click="clearPlants()">Start Over</button>
 
   </div>
 
-  

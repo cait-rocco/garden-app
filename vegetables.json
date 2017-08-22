@@ -1,10 +1,174 @@
 {
   "vegetables": {
     "0": {
-      "name": "tomato"
+      "name": "Tomato",
+      "pic": "tomato1.png",
+      "space": "Plant seedlings two feet apart.",
+      "sun": "Full sun and well-drained soil.",
+      "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+      "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+      "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+      "website": "https://www.almanac.com/plant/tomatoes"
     },
     "1": {
-    	"name": "cucumber"
+    	"name": "Cucumber",
+    	"pic": "cucumber.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "2": {
+    	"name": "Onion",
+    	"pic": "onion.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "3": {
+    	"name": "Potato",
+    	"pic": "potato.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "4": {
+    	"name": "Carrot",
+    	"pic": "carrot.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "5": {
+    	"name": "Lettuce",
+    	"pic": "lettuce.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "6": {
+    	"name": "Radishes",
+    	"pic": "radish.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "7": {
+    	"name": "Cabbage",
+    	"pic": "cabbage.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "8": {
+    	"name": "Pepper",
+    	"pic": "pepper.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "9": {
+    	"name": "Corn",
+    	"pic": "corn.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "10": {
+    	"name": "Broccoli",
+    	"pic": "broccoli.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "11": {
+    	"name": "Peas",
+    	"pic": "peas.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "12": {
+    	"name": "Garlic",
+    	"pic": "garlic.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "13": {
+    	"name": "Green Beans",
+    	"pic": "greenbeans.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "14": {
+    	"name": "Eggplant",
+    	"pic": "eggplant.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "15": {
+    	"name": "Chili Pepper",
+    	"pic": "chilipepper.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
+    },
+    "16": {
+    	"name": "Red Potato",
+    	"pic": "redpotato.png",
+	    "space": "Plant seedlings two feet apart.",
+	    "sun": "Full sun and well-drained soil.",
+	    "water": "Water well throughout the growing season, about 2 inches per week during the summer. Keep watering consistent.",
+	    "companions": "Good: carrots, celery, lettuce, peppers, radishes, spinach, onions. Bad: broccoli, cabbage, corn, kale, potatoes, cauliflower.",
+	    "time": "Start your seeds indoors 6 to 8 weeks before the average last spring frost date. Two weeks before transplanting seedlings outdoors, till soil to about 1 foot and mix in aged manure, compost, or fertilizer. Mulch five weeks after transplanting. Fertilize two weeks prior to first picking and again two weeks after first picking. Rotate crops each year. The perfect tomato for picking will be firm and very red in color.",
+	    "website": "https://www.almanac.com/plant/tomatoes"
     }
   }
 }

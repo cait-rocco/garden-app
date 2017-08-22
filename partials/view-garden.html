@@ -1,6 +1,6 @@
-<div class="viewBackground">
+<div class="viewBackground" ng-cloak>
 <div class="navLinks">
-  <a ng-href="#!/logout" ng-click="logout()">Logout</a>
+  <a href="#" ng-click="logout()">Logout</a>
   <a ng-href="#!/new-garden">Create a New Garden</a>
   <a ng-href="#!/gardens">Return to Garden List</a>
 </div>
@@ -8,6 +8,28 @@
 <div class="viewPage">
 <h3>{{gardens.name}}</h3><br>
 <div class="viewGarden">
+
+<div class="plantingTips">
+  <h4>Planting Tips</h4>
+  <a href="" class="tomato" ng-click="openModal(0)">Tomato<br></a>
+  <a href="" class="cucumber" ng-click="openModal(1)">Cucumber<br></a>
+  <a href="" class="onion" ng-click="openModal(2)">Onion<br></a>
+  <a href="" class="potato" ng-click="openModal(3)">Potato<br></a>
+  <a href="" class="carrot" ng-click="openModal(4)">Carrot<br></a>
+  <a href="" class="lettuce" ng-click="openModal(5)">Lettuce<br></a>
+  <a href="" class="radishes" ng-click="openModal(6)">Radish<br></a>
+  <a href="" class="cabbage" ng-click="openModal(7)">Cabbage<br></a>
+  <a href="" class="pepper" ng-click="openModal(8)">Pepper<br></a>
+  <a href="" class="corn" ng-click="openModal(9)">Corn<br></a>
+  <a href="" class="broccoli" ng-click="openModal(10)">Broccoli<br></a>
+  <a href="" class="peas" ng-click="openModal(11)">Peas<br></a>
+  <a href="" class="garlic" ng-click="openModal(12)">Garlic<br></a>
+  <a href="" class="greenBeans" ng-click="openModal(13)">Green Beans<br></a>
+  <a href="" class="eggplant" ng-click="openModal(14)">Eggplant<br></a>
+  <a href="" class="chiliPepper" ng-click="openModal(15)">Chili Pepper<br></a>
+  <a href="" class="redPotato" ng-click="openModal(16)">Red Potato</a>
+</div>
+
 <canvas id="graphCanvas2" ondrop="angular.element(this).scope().drop(event)" ondragover="angular.element(this).scope().allowDrop(event)" width={{gardens.width}} height={{gardens.length}} style="border:1px solid #000000;">
 </canvas>
 
@@ -30,13 +52,14 @@
 	</div>
   </div>
 </div>
+
 </div>
 </div>
 </div>
   <!-- Button trigger modal -->
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-model="">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -60,40 +83,21 @@
   </div>
 
 <div class="ng-hide">
-  <img id="tomato" src="tomato1.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
-
+  <img id="tomato" src="tomato1.png"/>
   <img id="cucumber" src="cucumber1.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
-
-  <img id="onion" src="onion.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
-
-  <img id="potato" src="potato.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
-
-  <img id="carrot" src="carrot.png" draggable="true" ng-mousedown="getPos($event)"ondragstart="angular.element(this).scope().drag(event)"/>
+  <img id="onion" src="onion.png"/>
+  <img id="potato" src="potato.png"/>
+  <img id="carrot" src="carrot.png"/>
+  <img id="lettuce" src="lettuce.png"/>
+  <img id="radishes" src="radishes.png"/>
+  <img id="cabbage" src="cabbage.png"/>
+  <img id="pepper" src="pepper.png"/>
+  <img id="corn" src="corn.png"/>
+  <img id="broccoli" src="broccoli.png"/>
+  <img id="peas" src="peas.png"/>
+  <img id="garlic" src="garlic.png"/>
+  <img id="greenBeans" src="greenBeans.png"/>
+  <img id="eggplant" src="eggplant.png"/>
+  <img id="chiliPepper" src="chiliPepper.png"/>
+  <img id="redPotato" src="redPotato.png"/>
 </div>
-
-<div>
-  <a ng-href="#" data-toggle="modal" data-target="#veggieModal">Tomato</a>
-</div>
-
-<div class="modal fade" id="veggieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-model="">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Add To do</h4>
-        </div>
-        <div class="modal-body">
-          <div>
-            To do: <input type="text" ng-model="todoItem.text">
-          </div>
-          <div>
-            Date: <input class="datepicker" data-provide="datepicker" ng-model="todoItem.date">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" ng-click="saveTodo()" data-dismiss="modal">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
